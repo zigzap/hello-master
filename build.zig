@@ -25,7 +25,7 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
     });
-    exe.addModule("zap", zap.module("zap"));
+    exe.root_module.addImport("zap", zap.module("zap"));
     exe.linkLibrary(zap.artifact("facil.io"));
     // This declares intent for the executable to be installed into the
     // standard location when the user invokes the "install" step (the default

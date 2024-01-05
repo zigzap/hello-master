@@ -1,23 +1,11 @@
 .{
-    .name = "hello-0.12.0",
-    // This is a [Semantic Version](https://semver.org/).
-    // In a future version of Zig it will be used for package deduplication.
-    .version = "0.0.0",
+    .name = "My example project",
+    .version = "0.0.1",
 
-    // This field is optional.
-    // This is currently advisory only; Zig does not yet do anything
-    // with this value.
-    //.minimum_zig_version = "0.11.0",
-
-    // This field is optional.
-    // Each dependency must either provide a `url` and `hash`, or a `path`.
-    // `zig build --fetch` can be used to fetch all dependencies of a package, recursively.
-    // Once all dependencies are fetched, `zig build` no longer requires
-    // internet connectivity.
     .dependencies = .{
         .zap = .{
-            .url = "https://codeload.github.com/zigzap/zap/tar.gz/82323f835e8e5a0a7bf7dc122c3a4cc6ea6addca",
-            .hash = "122044011c697543a198da111b20e08cfa5944b303aaa40cf2741e0449fa5af0a632",
+            .url = "https://github.com/zigzap/zap/archive/31bf768b96c022fefb597de8cc024f22c55a0100.tar.gz",
+            .hash = "1220b89e19deac3e9e9165d179b2ba9b8bf54205dff025862ae016a4cbe0a859a4cf",
         },
     },
     .paths = .{
