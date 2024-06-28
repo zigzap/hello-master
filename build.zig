@@ -16,8 +16,8 @@ pub fn build(b: *std.Build) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const exe = b.addExecutable(.{
-        .name = "hello-0.12.0",
-        .root_source_file = .{ .path = "src/main.zig" },
+        .name = "hello-master",
+        .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,
     });
@@ -26,7 +26,7 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
     exe.root_module.addImport("zap", zap.module("zap"));
-    exe.linkLibrary(zap.artifact("facil.io"));
+
     // This declares intent for the executable to be installed into the
     // standard location when the user invokes the "install" step (the default
     // step when running `zig build`).
